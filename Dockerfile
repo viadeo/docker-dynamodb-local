@@ -1,4 +1,4 @@
-FROM quay.io/viadeo/docker-java:oracle-java7
+FROM openjdk:7
 
 WORKDIR /dynamodb
 
