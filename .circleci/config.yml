@@ -1,0 +1,11 @@
+version: 2
+jobs:
+  build:
+    docker: 
+      - image: 062010136920.dkr.ecr.us-west-1.amazonaws.com/viadeo/docker-awscli:latest
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: 
+          name: Build docker image
+          command: aws s3 cp s3://viadeo-infra/ci-scripts/ecr/docker-publish.sh - | bash
